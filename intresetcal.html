@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>interest_rate_calculator</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      .form {
+        max-width: 350px;
+        margin: auto;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        text-align: justify;
+      }
+      .btn {
+        background-color: blueviolet;
+        color: white;
+        padding: 10px 15px;
+        font-size: 1.5em;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .result {
+        background-color: blueviolet;
+        text-align: justify;
+        max-width: 200px;
+        margin: auto;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+      input[type="number"] {
+        border: 1px solid black;
+        border-radius: 0px;
+
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <h6>Interest Rate Calculator</h6>
+      <br />
+      <label for="pmt">Principal Amount</label><br /><br />
+      <input type="number" id="pmt" /><br /><br />
+      <label for="rate">Rate (%)</label><br /><br />
+      <input type="number" id="rate" /><br /><br />
+      <label for="years">Time (Years)</label><br /><br />
+      <input type="number" id="years" /><br /><br /><br />
+
+      <button id="calculate" class="btn" onclick="interest()">Calculate</button
+      ><br /><br />
+
+      <div class="result">
+        <p id="principal"></p>
+
+        <p id="rateamt"></p>
+
+        <p id="total"></p>
+      </div>
+    </div>
+
+    <script>
+      const pmt = document.getElementById("pmt");
+      const rate = document.getElementById("rate");
+      const years = document.getElementById("years");
+      const calculate = document.getElementById("calculate");
+      const principal = document.getElementById("principal");
+      const rateamt = document.getElementById("rateamt");
+      const total = document.getElementById("total");
+
+      function interest() {
+        const pmtamt = parseFloat(pmt.value);
+        const ramt = parseFloat(rate.value);
+        const yrs = parseFloat(years.value);
+
+        const calrate = pmtamt + pmtamt * yrs * (ramt / 100);
+
+        principal.textContent = "Principal Amount: $" + pmtamt.toFixed(2);
+        rateamt.textContent = "Total Interest: $" + ramt.toFixed(2);
+        total.textContent = "Total Amount: $" + calrate.toFixed(2);
+      }
+    </script>
+  </body>
+</html>

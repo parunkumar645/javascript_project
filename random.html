@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random_num</title>
+    <style>
+      body {
+        font-family: verdana;
+        text-align: center;
+      }
+      #btn {
+        font-size: 3em;
+        padding: 5px 25px;
+        border-radius: 5px;
+        background-color: hsl(71, 100%, 50%);
+      }
+      .labels {
+        font-size: 3em;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Roll</button><br />
+    <label id="label1" class="labels"></label><br />
+    <label id="label2" class="labels"></label><br />
+    <label id="label3" class="labels"></label><br />
+  </body>
+  <script>
+    const btn = document.getElementById("btn");
+    const label1 = document.getElementById("label1");
+    const label2 = document.getElementById("label2");
+    const label3 = document.getElementById("label3");
+    const min = 1;
+    const max = 6;
+    let random1;
+    let random2;
+    let random3;
+
+    btn.onclick = function () {
+      random1 = Math.floor(Math.random() * max) + min;
+      random2 = Math.floor(Math.random() * max) + min;
+      random3 = Math.floor(Math.random() * max) + min;
+      label1.textContent = random1;
+      label2.textContent = random2;
+      label3.textContent = random3;
+    };
+  </script>
+</html>

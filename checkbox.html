@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checkbox</title>
+    <style>
+      #submit {
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Choose your Course</h1>
+    <input type="checkbox" id="mycheckbox" />
+    <label for="mychecknox">Subscibe</label><br /><br />
+
+    <input type="radio" id="fs" name="KGM" />
+    <label for="fs">Full Stack Development</label><br />
+    <input type="radio" id="wd" name="KGM" />
+    <label for="wd">Web Development</label><br />
+    <input type="radio" id="ds" name="KGM" />
+    <label for="ds">Data Science</label><br /><br />
+
+    <button type="submit" id="submit">Sunmit</button><br />
+
+    <p id="subResult"></p>
+    <p id="paymentresult"></p>
+
+    <script>
+      const mycheckbox = document.getElementById("mycheckbox");
+      const fs = document.getElementById("fs");
+      const wd = document.getElementById("wd");
+      const ds = document.getElementById("ds");
+      const submit = document.getElementById("submit");
+      const subResult = document.getElementById("subResult");
+      const paymentresult = document.getElementById("paymentresult");
+
+      submit.onclick = function () {
+        if (mycheckbox.checked) {
+          subResult.textContent = `Well Done Your Are Subscribed`;
+        }
+        if (fs.checked) {
+          paymentresult.textContent = `Well Done you are sucessfully entrolled the course.`;
+        } else if (wd.checked) {
+          paymentresult.textContent = `Well Done you are sucessfully entrolled the course.`;
+        } else if (ds.checked) {
+          paymentresult.textContent = `Well Done you are sucessfully entrolled the course.`;
+        } else {
+          subResult.textContent = `Oops!,sorry, Your Are Not Subscribed`;
+          paymentresult.textContent = `Oops!,sorry, you are Not entrolled Any course.`;
+        }
+      };
+    </script>
+  </body>
+</html>

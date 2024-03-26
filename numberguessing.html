@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const miniNum = 1;
+      const maxNum = 5;
+      const answer =
+        Math.floor(Math.random() * (maxNum - miniNum + 1)) + miniNum;
+
+      let attempts = 0;
+      let guess;
+      let running = true;
+
+      while (running) {
+        guess = window.prompt(`Guess a number ${miniNum}-${maxNum}`);
+        guess = parseInt(guess);
+
+        if (isNaN(guess) || guess < miniNum || guess > maxNum) {
+          window.alert("Enter a valid number");
+        } else {
+          attempts++;
+          if (guess < answer) {
+            window.alert("TOO LOW! TRY AGAIN");
+          } else if (guess > answer) {
+            window.alert("TOO HIGH! TRY AGAIN");
+          } else {
+            window.alert(
+              `CORRECT! The answer was ${answer}. It took you ${attempts} attempts`
+            );
+            running = false;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

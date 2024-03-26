@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>counter program</title>
+    <style>
+      #counterLabel {
+        display: block;
+        text-align: center;
+        font-size: 10em;
+        font-family: Helvetica;
+      }
+      #btncontainer {
+        text-align: center;
+      }
+      .buttons {
+        padding: 10px 20px;
+        font-size: 1.5em;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.25s;
+      }
+
+      #ibtn {
+        background-color: rgb(5, 5, 94);
+      }
+      #dbtn {
+        background-color: rgb(129, 4, 4);
+      }
+      #rbtn {
+        background-color: rgb(4, 127, 25);
+      }
+    </style>
+  </head>
+  <body>
+    <label id="counterLabel">0</label>
+    <div id="btncontainer">
+      <button id="ibtn" class="buttons">Increase</button>
+      <button id="dbtn" class="buttons">Decrease</button>
+      <button id="rbtn" class="buttons">Reset</button>
+    </div>
+
+    <script>
+      const ibtn = document.getElementById("ibtn");
+      const dbtn = document.getElementById("dbtn");
+      const rbtn = document.getElementById("rbtn");
+      const counterLabel = document.getElementById("counterLabel");
+      let count = 0;
+
+      ibtn.onclick = function () {
+        count++;
+        counterLabel.textContent = count;
+      };
+      dbtn.onclick = function () {
+        count--;
+        counterLabel.textContent = count;
+      };
+      rbtn.onclick = function () {
+        count = 0;
+        counterLabel.textContent = count;
+      };
+    </script>
+  </body>
+</html>

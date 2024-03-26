@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EbBill</title>
+  </head>
+  <body>
+    <h1>Welcome to Pvt EB portal</h1>
+    <label>Enter The Unit : </label>
+    <input type="text" id="text" /><br />
+    <button id="btn">Submit</button>
+    <p id="result"></p>
+  </body>
+  <script>
+    const text = document.getElementById("text");
+    const btn = document.getElementById("btn");
+    const result = document.getElementById("result");
+    let unit;
+
+    btn.onclick = function () {
+      unit = text.value;
+      unit = Number(unit);
+
+      if (unit < 401 && unit >= 301) {
+        result.textContent = `This month your consumed unit is ${unit}, so your bill amount is Rs.500`;
+      } else if (unit < 301 && unit >= 201) {
+        result.textContent = `This month your consumed unit is ${unit}, so your bill amount is Rs.400`;
+      } else if (unit < 201 && unit >= 101) {
+        result.textContent = `This month your consumed unit is ${unit}, so your bill amount is Rs.300`;
+      } else {
+        result.textContent = `This month your consumed unit is ${unit}, so you don't need to pay a bill, you can claim your bill`;
+      }
+    };
+  </script>
+</html>
